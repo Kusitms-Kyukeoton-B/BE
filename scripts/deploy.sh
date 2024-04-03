@@ -13,7 +13,7 @@ if [ -z $IS_GREEN_EXIST ];then
   while [ 1 = 1 ]; do
     echo ">>> green health check 중..."
     sleep 3
-    REQUEST=$(curl http://127.0.0.1:8081)
+    REQUEST=$(curl http://127.0.0.1:8082)
     if [ -n "$REQUEST" ]; then
       echo ">>> 🍃 health check success !"
       break;
@@ -36,7 +36,7 @@ else
   while [ 1 = 1 ]; do
     echo ">>> blue health check 중..."
     sleep 3
-    REQUEST=$(curl http://127.0.0.1:8080)
+    REQUEST=$(curl http://127.0.0.1:8081)
     if [ -n "$REQUEST" ]; then
       echo ">>> 🍃 health check success !"
       break;
