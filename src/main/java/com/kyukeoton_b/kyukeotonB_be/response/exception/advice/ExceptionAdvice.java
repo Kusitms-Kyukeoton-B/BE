@@ -30,12 +30,14 @@ public class ExceptionAdvice extends ResponseEntityExceptionHandler {
     }
 
     //@valid -> 에러 발생 시 별도 처리 필요
-    @ExceptionHandler(MethodArgumentNotValidException.class)
-    protected ResponseEntity<Object> handleMethodArgumentNotValidException(MethodArgumentNotValidException ex, HttpHeaders headers,
-                                                                           HttpStatus status, WebRequest request){
-        String errorMessage = ex.getBindingResult().getAllErrors().get(0).getDefaultMessage();
-        BaseResponse<Object> baseResponse = new BaseResponse<>(false, errorMessage, HttpStatus.BAD_REQUEST.value());
-        return handleExceptionInternal(ex, baseResponse, new HttpHeaders(), HttpStatus.BAD_REQUEST, request);
-    }
+//    @ExceptionHandler(MethodArgumentNotValidException.class)
+//    protected ResponseEntity<Object> handleMethodArgumentNotValidException(MethodArgumentNotValidException ex, HttpHeaders headers,
+//                                                                           HttpStatus status, WebRequest request){
+//        String errorMessage = ex.getBindingResult().getAllErrors().get(0).getDefaultMessage();
+//        BaseResponse<Object> baseResponse = new BaseResponse<>(false, errorMessage, HttpStatus.BAD_REQUEST.value());
+//        return handleExceptionInternal(ex, baseResponse, new HttpHeaders(), HttpStatus.BAD_REQUEST, request);
+//    }
+    // MethodArgumentNotValidException 처리
+
 
 }
