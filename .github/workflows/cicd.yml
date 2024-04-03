@@ -45,9 +45,9 @@ jobs:
     ## 웹 이미지 빌드 및 도커허브에 push
     - name: web docker build and push
       run: |
-        docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-        docker build -t ${{ secrets.DOCKER_REPO }}/blue-green .
-        docker push ${{ secrets.DOCKER_REPO }}/blue-green
+        sudo docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+        sudo docker build -t ${{ secrets.DOCKER_REPO }}/blue-green .
+        sudo docker push ${{ secrets.DOCKER_REPO }}/blue-green
         
         
     ## deploy.sh 파일 서버로 전달하기(복사 후 붙여넣기)
@@ -83,7 +83,7 @@ jobs:
         key: ${{ secrets.KEY }}
         script: |
           sudo docker pull ${{ secrets.DOCKER_REPO }}/blue-green
-          chmod 777 ./scripts/deploy.sh
-          cp ./scripts/deploy.sh ./deploy.sh
+          sudo chmod 777 ./scripts/deploy.sh
+          sudo cp ./scripts/deploy.sh ./deploy.sh
           ./deploy.sh
-          docker image prune -f
+          sudo docker image prune -f
