@@ -45,9 +45,9 @@ jobs:
     ## 웹 이미지 빌드 및 도커허브에 push
     - name: web docker build and push
       run: |
-        sudo docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-        sudo docker build -t ${{ secrets.DOCKER_REPO }}/blue-green .
-        sudo docker push ${{ secrets.DOCKER_REPO }}/blue-green
+        docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+        docker build -t ${{ secrets.DOCKER_REPO }}/blue-green .
+        docker push ${{ secrets.DOCKER_REPO }}/blue-green
         
         
     ## deploy.sh 파일 서버로 전달하기(복사 후 붙여넣기)
