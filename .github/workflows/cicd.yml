@@ -83,7 +83,7 @@ jobs:
         key: ${{ secrets.KEY }}
         script: |
           sudo docker pull ${{ secrets.DOCKER_REPO }}/blue-green
-          sudo chmod 777 ./scripts/deploy.sh
+          chmod 777 ./scripts/deploy.sh
           cp ./scripts/deploy.sh ./deploy.sh
           ./deploy.sh
           docker image prune -f
