@@ -1,10 +1,10 @@
 package com.kyukeoton_b.kyukeotonB_be.global.status;
 
+import com.kyukeoton_b.kyukeotonB_be.global.code.BaseCode;
+import com.kyukeoton_b.kyukeotonB_be.global.dto.ReasonDto;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.springframework.http.HttpStatus;
-import ussum.homepage.global.error.code.BaseCode;
-import ussum.homepage.global.error.dto.ReasonDto;
 
 @Getter
 @AllArgsConstructor
