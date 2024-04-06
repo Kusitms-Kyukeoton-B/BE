@@ -17,14 +17,12 @@ public enum ErrorStatus implements BaseErrorCode {
 
     //User 관련 에러
     USER_NOT_FOUND(HttpStatus.NOT_FOUND, "USER_001", "사용자를 찾을 수 없습니다."),
-
-    //S3 관련 에러
+    FAILED_TO_LOGIN_ID(HttpStatus.NOT_FOUND,"USER_002","아이디가 일치하지 않습니다."),
+    FAILED_TO_LOGIN_PWD(HttpStatus.NOT_FOUND, "USER_003","비밀번호가 일치하지 않습니다."),
+    INVALID_USER_JWT(HttpStatus.FORBIDDEN,"USER_004","권한이 없는 유저의 접근입니다."),
     S3_NOT_FOUND(HttpStatus.NOT_FOUND,"S3_001","이미지를 처리하는데 오류가 발생하였습니다"),
 
-
     INVALID_BODY(HttpStatus.BAD_REQUEST, "BODY_ERROR", "Body가 올바르지 않습니다.");
-
-
 
 
     private final HttpStatus httpStatus;

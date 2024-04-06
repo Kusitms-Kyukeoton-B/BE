@@ -3,6 +3,8 @@ package com.kyukeoton_b.kyukeotonB_be.global.exception;
 import com.kyukeoton_b.kyukeotonB_be.global.ApiResponse;
 import com.kyukeoton_b.kyukeotonB_be.global.dto.ErrorReasonDto;
 import com.kyukeoton_b.kyukeotonB_be.global.status.ErrorStatus;
+import javax.servlet.http.HttpServletRequest;
+import javax.validation.ConstraintViolationException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.TypeMismatchException;
 import org.springframework.http.HttpHeaders;
@@ -17,9 +19,6 @@ import org.springframework.web.context.request.ServletWebRequest;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
-
-import javax.servlet.http.HttpServletRequest;
-import javax.validation.ConstraintViolationException;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Optional;
