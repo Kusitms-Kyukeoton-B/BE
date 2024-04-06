@@ -15,5 +15,7 @@ public class TalkCategory {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Enumerated(EnumType.STRING)
+    @Column(name = "talk_category")
     private Category talkCategory;
 }
