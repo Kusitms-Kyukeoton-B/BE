@@ -3,13 +3,10 @@ package com.kyukeoton_b.kyukeotonB_be.global.exception;
 import com.kyukeoton_b.kyukeotonB_be.global.ApiResponse;
 import com.kyukeoton_b.kyukeotonB_be.global.dto.ErrorReasonDto;
 import com.kyukeoton_b.kyukeotonB_be.global.status.ErrorStatus;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.validation.ConstraintViolationException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.TypeMismatchException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.MissingServletRequestParameterException;
@@ -21,6 +18,8 @@ import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 
+import javax.servlet.http.HttpServletRequest;
+import javax.validation.ConstraintViolationException;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Optional;
@@ -37,7 +36,7 @@ public class ExceptionAdvice extends ResponseEntityExceptionHandler {
      */
     @Override
     protected ResponseEntity<Object> handleTypeMismatch(TypeMismatchException e, HttpHeaders headers,
-                                                        HttpStatusCode status, WebRequest request) {
+                                                        HttpStatus status, WebRequest request) {
 
         String errorMessage = e.getPropertyName() + ": 올바른 값이 아닙니다.";
 
@@ -53,7 +52,7 @@ public class ExceptionAdvice extends ResponseEntityExceptionHandler {
     @Override
     protected ResponseEntity<Object> handleMissingServletRequestParameter(MissingServletRequestParameterException e,
                                                                           HttpHeaders headers,
-                                                                          HttpStatusCode status, WebRequest webRequest) {
+                                                                          HttpStatus status, WebRequest webRequest) {
 
         String errorMessage = e.getParameterName() + ": 올바른 값이 아닙니다.";
 
@@ -69,7 +68,7 @@ public class ExceptionAdvice extends ResponseEntityExceptionHandler {
      */
     @Override
     public ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException e, HttpHeaders headers,
-                                                               HttpStatusCode status, WebRequest webRequest) {
+                                                               HttpStatus status, WebRequest webRequest) {
 
         Map<String, String> errors = new LinkedHashMap<>();
 

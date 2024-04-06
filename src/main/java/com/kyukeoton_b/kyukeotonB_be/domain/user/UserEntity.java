@@ -1,11 +1,12 @@
 package com.kyukeoton_b.kyukeotonB_be.domain.user;
 
 import com.kyukeoton_b.kyukeotonB_be.domain.BaseEntity;
-import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "user")
