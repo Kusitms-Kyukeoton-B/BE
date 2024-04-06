@@ -1,6 +1,7 @@
 package com.kyukeoton_b.kyukeotonB_be.domain.comment;
 
 import com.kyukeoton_b.kyukeotonB_be.domain.BaseEntity;
+import com.kyukeoton_b.kyukeotonB_be.domain.dopamine.Post;
 import lombok.*;
 
 import javax.persistence.*;
@@ -22,4 +23,10 @@ public class ReplyComment extends BaseEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "comment_id")
     private Comment comment;
+
+    public void setComment(Comment comment) {
+        this.comment = comment;
+    }
+
+
 }

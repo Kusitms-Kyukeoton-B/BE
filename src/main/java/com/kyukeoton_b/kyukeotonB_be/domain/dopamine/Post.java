@@ -57,4 +57,16 @@ public class Post extends BaseEntity {
     @JoinColumn(name = "user_id")
     private User user;
 
+    public void setDopamine(String image) {
+        this.dopamineImg = image;
+    }
+
+    public void setDopamineVideo(String video) {
+        this.dopamineVideo = video;
+    }
+
+    public void setPostType(PostType postType) {
+        this.postType = postType;
+    }
+
 }

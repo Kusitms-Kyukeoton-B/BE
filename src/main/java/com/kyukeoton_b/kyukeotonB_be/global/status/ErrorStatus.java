@@ -22,6 +22,10 @@ public enum ErrorStatus implements BaseErrorCode {
     INVALID_USER_JWT(HttpStatus.FORBIDDEN,"USER_004","권한이 없는 유저의 접근입니다."),
     S3_NOT_FOUND(HttpStatus.NOT_FOUND,"S3_001","이미지를 처리하는데 오류가 발생하였습니다"),
 
+    POST_NOT_FOUND(HttpStatus.NOT_FOUND,"POST_001","게시물을 찾지 못했습니다."),
+    POST_TALK_NOT_FOUND(HttpStatus.NOT_FOUND, "POST_001", "도파밍 토크 글을 찾을 수 없습니다."),
+    COMMENT_NOT_FOUND(HttpStatus.NOT_FOUND,"COMMENT_001","코멘트를 찾지 못했습니다."),
+
     INVALID_BODY(HttpStatus.BAD_REQUEST, "BODY_ERROR", "Body가 올바르지 않습니다.");
 
 

@@ -11,7 +11,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Builder
 @Getter
-@Table(name = "character")
+@Table(name = "userecharacter")
 public class Character extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

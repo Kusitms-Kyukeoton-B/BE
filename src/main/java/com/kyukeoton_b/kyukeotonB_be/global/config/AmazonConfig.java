@@ -30,6 +30,9 @@ public class AmazonConfig {
     @Value("${cloud.aws.region.static}")
     private String region;
 
+    @Value("${cloud.aws.s3.path.post}")
+    private String postPath;
+
     private AWSCredentials awsCredentials;
 
     @PostConstruct
