@@ -37,9 +37,6 @@ public class AmazonS3Manager {
         }
         return amazonS3.getUrl(amazonConfig.getBucket(), keyName).toString();
     }
-    public String generatePostKeyName(Uuid uuid) {
-        return amazonConfig.getPostPath() + '/' + uuid.getUuid();
-    }
 }
 
 

@@ -59,9 +59,9 @@ public class PostService {
         Uuid savedUuid = uuidRepository.save(Uuid.builder()
                 .uuid(uuid).build());
 
-        String imageUrl = amazonS3Manager.uploadFile(amazonS3Manager.generatePostKeyName(savedUuid), file);
+//        String imageUrl = amazonS3Manager.uploadFile(, file);
         Post post = PostRequest.toEntity(postRequest);
-        post.setDopamine(imageUrl);
+        post.setDopamine(null);
 //        post.setPostType(PostType.IMAGE);
         postRepository.save(post);
     }
