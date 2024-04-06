@@ -31,9 +31,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .sessionManagement().sessionCreationPolicy((SessionCreationPolicy.STATELESS))
                 .and()
                 .exceptionHandling()
-                .authenticationEntryPoint(jwtAuthenticationEntryPoint)
-                .and()
-                .addFilterBefore(new JwtAuthenticationFilter(jwtService), UsernamePasswordAuthenticationFilter.class);
+                //.authenticationEntryPoint(jwtAuthenticationEntryPoint)
+                .and();
+                //.addFilterBefore(new JwtAuthenticationFilter(jwtService), UsernamePasswordAuthenticationFilter.class);
     }
     @Bean
     public PasswordEncoder passwordEncoder() {
