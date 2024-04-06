@@ -15,8 +15,4 @@ public class healthController {
         return "Hello, KyuKeoton!";
     }
 
-    @GetMapping("/user")
-    public String hellod() {
-        return "Hello, KyuKeotonasdf!";
-    }
 }
