@@ -4,9 +4,9 @@ import com.kyukeoton_b.kyukeotonB_be.domain.BaseEntity;
 import javax.persistence.*;
 
 import lombok.*;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
+//import org.springframework.security.core.GrantedAuthority;
+//import org.springframework.security.core.authority.SimpleGrantedAuthority;
+//import org.springframework.security.core.userdetails.UserDetails;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -18,36 +18,36 @@ import java.util.List;
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-public class User extends BaseEntity implements UserDetails {
+public class User extends BaseEntity {
     //유저 인덱스
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "userId", nullable = false, updatable = false)
+    @Column(name = "userId")
     private Long userId;
 
     // 아이디
-    @Column(nullable = false, length = 45)
+    @Column
     private String id;
 
-    @Column(nullable = false)
-    private String uuid;
+//    @Column(nullable = false)
+//    private String uuid;
 
-    @Column(nullable = false, length = 45)
+    @Column
     private String email;
 
-    @Column(columnDefinition = "TEXT", nullable = false)
+    @Column
     private String password;
 
-    @Column(nullable = false, length = 20)
+    @Column
     private String name;
 
-    @Column(nullable = false, length = 20)
+    @Column
     private String nickname;
 
-    @Column(nullable = false)
+    @Column
     private LocalDate birthDate;
 
-    @Column(columnDefinition = "TEXT")
+    @Column
     private String profileImg;
 
 
@@ -62,38 +62,38 @@ public class User extends BaseEntity implements UserDetails {
         this.birthDate = birthDate;
         this.profileImg = profileImg;
     }
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        List<GrantedAuthority> authorities = new ArrayList<>();
-        authorities.add(new SimpleGrantedAuthority("ROLE_USER"));
-        return authorities;
-    }
-    @Override
-    public String getPassword() {
-        return password;
-    }
-    @Override
-    public String getUsername() {
-        return uuid;
-    }
-
-    @Override
-    public boolean isAccountNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isAccountNonLocked() {
-        return true;
-    }
-
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isEnabled() {
-        return true;
-    }
+//    @Override
+//    public Collection<? extends GrantedAuthority> getAuthorities() {
+//        List<GrantedAuthority> authorities = new ArrayList<>();
+//        authorities.add(new SimpleGrantedAuthority("ROLE_USER"));
+//        return authorities;
+//    }
+//    @Override
+//    public String getPassword() {
+//        return password;
+//    }
+//    @Override
+//    public String getUsername() {
+//        return uuid;
+//    }
+//
+//    @Override
+//    public boolean isAccountNonExpired() {
+//        return true;
+//    }
+//
+//    @Override
+//    public boolean isAccountNonLocked() {
+//        return true;
+//    }
+//
+//    @Override
+//    public boolean isCredentialsNonExpired() {
+//        return true;
+//    }
+//
+//    @Override
+//    public boolean isEnabled() {
+//        return true;
+//    }
 }
