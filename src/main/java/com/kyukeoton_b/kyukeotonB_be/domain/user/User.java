@@ -8,6 +8,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -45,7 +46,7 @@ public class User extends BaseEntity implements UserDetails {
     private String nickname;
 
     @Column(nullable = false)
-    private LocalDateTime birthDate;
+    private LocalDate birthDate;
 
     @Column(columnDefinition = "TEXT")
     private String profileImg;
@@ -53,7 +54,7 @@ public class User extends BaseEntity implements UserDetails {
 
     @Builder
     public User(String id, String uuid, String email, String password, String name, String nickname,
-                LocalDateTime birthDate, String profileImg){
+                LocalDate birthDate, String profileImg){
         this.id = id;
         this.email = email;
         this.password = password;

@@ -16,7 +16,7 @@ public class UserController {
     private final long COOKIE_EXPIRATION = JwtSecret.COOKIE_EXPIRATION_TIME;
     private final UserService userService;
 
-    @PostMapping("/users/log-in")
+    @PostMapping("/log-in")
     public ResponseEntity<?> login(@RequestBody PostLoginReq postLoginReq) {
         //User 등록 및 Refresh Token 저장
         TokenDto tokenDto = userService.login(postLoginReq);
