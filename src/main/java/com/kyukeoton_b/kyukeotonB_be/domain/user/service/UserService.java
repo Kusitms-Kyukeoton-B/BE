@@ -36,17 +36,21 @@ public class UserService {
                 .orElseThrow(() -> new UserException(FAILED_TO_LOGIN_ID)); //아이디가 일치하지 않습니다.
 
 
-        if(!passwordEncoder.matches(postLoginReq.getPassword(), user.getPassword())) {
+        /*if(!passwordEncoder.matches(postLoginReq.getPassword(), user.getPassword())) {
+            throw new UserException(FAILED_TO_LOGIN_PWD); //비밀번호가 일치하지 않습니다.
+        }*/
+
+        if(!postLoginReq.getPassword().equals(user.getPassword())) {
             throw new UserException(FAILED_TO_LOGIN_PWD); //비밀번호가 일치하지 않습니다.
         }
 
-        UsernamePasswordAuthenticationToken authenticationToken
+        /*UsernamePasswordAuthenticationToken authenticationToken
                 = new UsernamePasswordAuthenticationToken(user.getUuid(), postLoginReq.getPassword());
         Authentication authentication = authenticationManagerBuilder.getObject()
                 .authenticate(authenticationToken);
-        SecurityContextHolder.getContext().setAuthentication(authentication);
+        SecurityContextHolder.getContext().setAuthentication(authentication);*/
 
-        return generateToken(SERVER, authentication.getName());
+        return generateToken(SERVER, user.getUuid());
     }
     /**
      * 재발급 필요 여부 확인
