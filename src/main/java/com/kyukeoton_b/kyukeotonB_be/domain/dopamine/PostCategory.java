@@ -18,4 +18,7 @@ public class PostCategory {
     @Enumerated(EnumType.STRING)
     @Column(name = "post_category")
     private Category postCategory;
+
+    @OneToOne(mappedBy = "postCategory")
+    private Post post;
 }

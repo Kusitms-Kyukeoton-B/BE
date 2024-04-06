@@ -45,12 +45,12 @@ public class Post extends BaseEntity {
     @Column(name = "right_question")
     private String rightQuestion;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "post_category")
+    @OneToOne
+    @JoinColumn(name = "post_category_id")
     private PostCategory postCategory;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "talk_category")
+    @OneToOne
+    @JoinColumn(name = "talk_category_id")
     private TalkCategory talkCategory;
 
     @ManyToOne(fetch = FetchType.LAZY)

@@ -18,4 +18,7 @@ public class TalkCategory {
     @Enumerated(EnumType.STRING)
     @Column(name = "talk_category")
     private Category talkCategory;
+
+    @OneToOne(mappedBy = "talkCategory")
+    private Post talk;
 }
