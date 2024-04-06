@@ -10,7 +10,7 @@ public class healthController {
 //        return "Hello, KyuKeoton!";
 //    }
 
-    @GetMapping("/")
+    @GetMapping("/health-check")
     public String hello() {
         return "Hello, KyuKeoton!";
     }
