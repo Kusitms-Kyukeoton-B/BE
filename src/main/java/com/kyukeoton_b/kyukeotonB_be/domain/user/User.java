@@ -19,6 +19,12 @@ public class User extends BaseEntity {
     @Column(name = "login_id")
     private String loginId;
 
+    @Column(name = "password")
+    private String password;
+
+    @Column(name = "introduction")
+    private String introduction;
+
     @Column(name = "name")
     private String name;
 
@@ -27,4 +33,10 @@ public class User extends BaseEntity {
 
     @Column(name = "point")
     private Integer point;
+
+    @Column(name = "follower")
+    private Integer follower;
+
+    @Column(name = "following")
+    private Integer following;
 }
