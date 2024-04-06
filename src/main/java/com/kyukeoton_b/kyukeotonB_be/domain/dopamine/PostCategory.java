@@ -1,5 +1,6 @@
 package com.kyukeoton_b.kyukeotonB_be.domain.dopamine;
 
+import com.kyukeoton_b.kyukeotonB_be.domain.BaseEntity;
 import lombok.*;
 
 import javax.persistence.*;
@@ -10,7 +11,7 @@ import javax.persistence.*;
 @Builder
 @Getter
 @Table(name = "post_category")
-public class PostCategory {
+public class PostCategory extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

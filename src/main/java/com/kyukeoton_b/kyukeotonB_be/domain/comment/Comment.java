@@ -1,5 +1,6 @@
 package com.kyukeoton_b.kyukeotonB_be.domain.comment;
 
+import com.kyukeoton_b.kyukeotonB_be.domain.BaseEntity;
 import com.kyukeoton_b.kyukeotonB_be.domain.dopamine.Post;
 import lombok.*;
 
@@ -11,7 +12,7 @@ import javax.persistence.*;
 @Builder
 @Getter
 @Table(name = "comment")
-public class Comment {
+public class Comment extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

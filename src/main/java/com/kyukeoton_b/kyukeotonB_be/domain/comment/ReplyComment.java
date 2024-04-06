@@ -1,5 +1,6 @@
 package com.kyukeoton_b.kyukeotonB_be.domain.comment;
 
+import com.kyukeoton_b.kyukeotonB_be.domain.BaseEntity;
 import lombok.*;
 
 import javax.persistence.*;
@@ -10,7 +11,7 @@ import javax.persistence.*;
 @Builder
 @Getter
 @Table(name = "reply_comment")
-public class ReplyComment {
+public class ReplyComment extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
